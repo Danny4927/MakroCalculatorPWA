@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1575812542779,
+  "timestamp": 1575812884062,
   "index": "https://danny4927.github.io/MakroCalculatorPWA/index.html",
   "assetGroups": [
     {
@@ -52,7 +52,7 @@
     "https://danny4927.github.io/MakroCalculatorPWA/index.html": "15398ba2d9d7355a725c1eae5116488215e0fc71",
     "https://danny4927.github.io/MakroCalculatorPWA/main-es2015.6a1240ca56d1f8090bf2.js": "0ebbe64264af0813072edfe790015e1fabcc0364",
     "https://danny4927.github.io/MakroCalculatorPWA/main-es5.6a1240ca56d1f8090bf2.js": "b313df3606b760d0bd2e4cd0987df880672347af",
-    "https://danny4927.github.io/MakroCalculatorPWA/manifest.webmanifest": "10ec104c1290b9af5a3e085ec7a0cc4d1296dad2",
+    "https://danny4927.github.io/MakroCalculatorPWA/manifest.webmanifest": "9b8c807fb9544c04afe39d9be76b5b96d62b3144",
     "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
     "https://danny4927.github.io/MakroCalculatorPWA/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",

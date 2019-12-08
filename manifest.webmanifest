@@ -5,7 +5,7 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://danny4927.github.io/MakroCalculatorPWA/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
