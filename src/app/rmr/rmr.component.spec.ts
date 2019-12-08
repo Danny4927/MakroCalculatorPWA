@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RmrStepComponent } from './rmr-step.component';
+import { RmrComponent } from './rmr.component';
 
 describe('RmrStepComponent', () => {
-  let component: RmrStepComponent;
-  let fixture: ComponentFixture<RmrStepComponent>;
+  let component: RmrComponent;
+  let fixture: ComponentFixture<RmrComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RmrStepComponent ]
+      declarations: [ RmrComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RmrStepComponent);
+    fixture = TestBed.createComponent(RmrComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

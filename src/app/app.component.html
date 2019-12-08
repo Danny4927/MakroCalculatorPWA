@@ -1,34 +1,3 @@
-<mat-toolbar class="my-toolbar" color="primary">
-  <span>Macro Calculator</span>
-</mat-toolbar>
-<mat-horizontal-stepper [linear]=true #stepper>
-  <mat-step>
-    <ng-template matStepLabel>RMR</ng-template>
-    <app-intro></app-intro>
-    <app-rmr-step></app-rmr-step>
-    <div class="mt-1">
-      <button mat-flat-button color="primary" matStepperNext>Weiter</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>PAL</ng-template>
-    Als Aktivitätslevel (engl. "Physical Activity Level"), auch Leistungsumsatz oder Arbeitsumsatz genannt, wird
-    diejenige Energiemenge definiert, die der Mensch über den Grundumsatz hinaus für Arbeitstätigkeiten umsetzt.
-
-    Welches Aktivitätslevel trifft auf Sie am meisten zu?
-    <div class="mt-1">
-      <button mat-flat-button color="secondary" matStepperPrevious>Zurück</button>
-      <button mat-flat-button color="primary" matStepperNext>Weiter</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Ergebnis</ng-template>
-    You are now done.
-    <div class="mt-1">
-      <button mat-flat-button color="primary" matStepperPrevious>Back</button>
-      <button mat-flat-button color="secondary" (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper>
+<app-landingpage></app-landingpage>
 
 <router-outlet></router-outlet>

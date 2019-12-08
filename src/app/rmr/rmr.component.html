@@ -31,6 +31,6 @@
         <input [(ngModel)]="weight" matInput placeholder="Gewicht (kg)" (change)="calculateRMR()" required>
       </mat-form-field>
     </div>
-    <div *ngIf="calories" class="mat-h2">RMR: {{calories}} Kcal</div>
+    <div *ngIf="service.rmr" class="mat-h2">RMR: {{service.rmr}} Kcal</div>
   </mat-card-content>
 </mat-card>

@@ -14,16 +14,18 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { IntroComponent } from './intro/intro.component';
-import { RmrStepComponent } from './rmr-step/rmr-step.component';
+import { RmrComponent } from './rmr/rmr.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
-    RmrStepComponent
+    RmrComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
