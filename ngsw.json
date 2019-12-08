@@ -1,0 +1,80 @@
+{
+  "configVersion": 1,
+  "timestamp": 1575812542779,
+  "index": "https://danny4927.github.io/MakroCalculatorPWA/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://danny4927.github.io/MakroCalculatorPWA/favicon.ico",
+        "https://danny4927.github.io/MakroCalculatorPWA/index.html",
+        "https://danny4927.github.io/MakroCalculatorPWA/main-es2015.6a1240ca56d1f8090bf2.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/main-es5.6a1240ca56d1f8090bf2.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/manifest.webmanifest",
+        "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es2015.2987770fde9daa1d8a2e.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es5.6696c533341b95a3d617.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/runtime-es2015.edb2fcf2778e7bf1d426.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/runtime-es5.edb2fcf2778e7bf1d426.js",
+        "https://danny4927.github.io/MakroCalculatorPWA/styles.d9dc716df0c684d997ec.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-128x128.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-144x144.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-152x152.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-192x192.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-384x384.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-512x512.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-72x72.png",
+        "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://danny4927.github.io/MakroCalculatorPWA/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://danny4927.github.io/MakroCalculatorPWA/index.html": "15398ba2d9d7355a725c1eae5116488215e0fc71",
+    "https://danny4927.github.io/MakroCalculatorPWA/main-es2015.6a1240ca56d1f8090bf2.js": "0ebbe64264af0813072edfe790015e1fabcc0364",
+    "https://danny4927.github.io/MakroCalculatorPWA/main-es5.6a1240ca56d1f8090bf2.js": "b313df3606b760d0bd2e4cd0987df880672347af",
+    "https://danny4927.github.io/MakroCalculatorPWA/manifest.webmanifest": "10ec104c1290b9af5a3e085ec7a0cc4d1296dad2",
+    "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
+    "https://danny4927.github.io/MakroCalculatorPWA/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
+    "https://danny4927.github.io/MakroCalculatorPWA/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://danny4927.github.io/MakroCalculatorPWA/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://danny4927.github.io/MakroCalculatorPWA/styles.d9dc716df0c684d997ec.css": "26453d47ec36430b523ace93361172ee2488aa30"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
