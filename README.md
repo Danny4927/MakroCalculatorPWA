@@ -1,6 +1,8 @@
-# MacroCalculatorPwa
+# Macro Calculator PWA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Calculates the calories and macro nutrition facts for you!
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19 and is using Angular Material.
 
 ## Development server
 
