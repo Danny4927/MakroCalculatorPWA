@@ -8,6 +8,8 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule, MatStepperModule, M
 import { IntroComponent } from './intro/intro.component';
 import { RmrStepComponent } from './rmr-step/rmr-step.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

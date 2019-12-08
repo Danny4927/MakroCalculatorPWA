@@ -4,9 +4,19 @@ Calculates the calories and macro nutrition facts for you!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19 and is using Angular Material.
 
+It is hosted with github pages: https://danny4927.github.io/MakroCalculatorPWA/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Update gh-pages:
+
+- install angular-cli-ghpages (only once): ``npm install -g angular-cli-ghpages``
+- build: ``ng build --prod --base-href https://danny4927.github.io/MakroCalculatorPWA/``
+
+- upload: ``ngh -no-silent -d dist/macro-calculator-pwa``
+
 
 ## Code scaffolding
 
