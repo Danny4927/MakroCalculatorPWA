@@ -4,10 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatStepperModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRadioModule,
+  MatStepperModule,
+  MatToolbarModule
+} from '@angular/material';
 import { IntroComponent } from './intro/intro.component';
 import { RmrStepComponent } from './rmr-step/rmr-step.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -27,7 +35,10 @@ import { environment } from '../environments/environment';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    MatRadioModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
