@@ -11,7 +11,7 @@ export class RmrComponent implements OnInit {
   age: string;
   weight: number;
 
-  constructor(private service: CalculationService) {
+  constructor(public service: CalculationService) {
   }
 
   ngOnInit() {

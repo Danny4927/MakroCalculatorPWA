@@ -8,7 +8,7 @@ import {CalculationService} from '../services/calculation.service';
 })
 export class LandingpageComponent implements OnInit {
 
-  constructor(private service: CalculationService) { }
+  constructor(public service: CalculationService) { }
 
   ngOnInit() {
   }
