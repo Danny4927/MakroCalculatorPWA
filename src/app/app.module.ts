@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,13 +19,21 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { PalComponent } from './pal/pal.component';
+import { ResultComponent } from './result/result.component';
+import {registerLocaleData} from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
     RmrComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    PalComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     MatCardModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'de-DE'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
