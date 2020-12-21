@@ -32,7 +32,11 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "postinstall": "ngcc"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -126,6 +130,13 @@
             "production": {
               "devServerTarget": "macro-calculator-pwa:serve:production"
             }
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "configuration": "production",
+            "baseHref": "/MakroCalculatorPWA/"
           }
         }
       }
