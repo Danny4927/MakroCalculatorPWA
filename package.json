@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "buildGh": "ng build --prod --base-href https://danny4927.github.io/MakroCalculatorPWA/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "deployGh": "npm run buildGh && ngh -no-silent -d dist/macro-calculator-pwa"
   },
   "private": true,
   "dependencies": {
