@@ -1,12 +1,20 @@
 .my-toolbar {
   position: fixed;
   z-index: 2;
+  padding-left: .5rem;
 }
 
 .mt-1 {
   margin-top: 1rem;
 }
 
+.ml-5{
+  margin-left: .5rem;
+}
+
 .placeholder {
   height: 4rem;
 }
+ .sidenav-container{
+   height: 100vh;
+ }

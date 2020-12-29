@@ -11,27 +11,28 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { IntroComponent } from './intro/intro.component';
-import { RmrComponent } from './rmr/rmr.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { PalComponent } from './pal/pal.component';
-import { ResultComponent } from './result/result.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import {registerLocaleData} from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
+import {FlexModule} from '@angular/flex-layout';
+import { BMIComponent } from './bmi/bmi.component';
+import {EnergyModule} from './energy/energy.module';
 
 registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntroComponent,
-    RmrComponent,
-    LandingpageComponent,
-    PalComponent,
-    ResultComponent
+    LandingPageComponent,
+    SidenavMenuComponent,
+    BMIComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,12 @@ registerLocaleData(localeDe);
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     MatRadioModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    FlexModule,
+    EnergyModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'de-DE'}

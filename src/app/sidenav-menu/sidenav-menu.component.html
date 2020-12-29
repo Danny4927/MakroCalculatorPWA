@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" class="sidebar-header">
+  <button mat-fab>
+    <mat-icon>directions_run</mat-icon>
+  </button>
+  <div>Ich</div>
+</div>
+<mat-divider></mat-divider>
+<mat-action-list>
+  <button mat-list-item (click)="navigateToRMR()">
+    <mat-icon matListIcon>restaurant</mat-icon>
+    Täglicher Energiebedarf
+  </button>
+  <button mat-list-item (click)="navigateToBMI()">
+    <mat-icon matListIcon>elevator</mat-icon>
+    Body-Mass-Index (BMI)
+  </button>
+</mat-action-list>

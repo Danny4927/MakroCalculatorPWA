@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CalculationService} from '../services/calculation.service';
+import {CalculationService} from '../../services/calculation/calculation.service';
 
 @Component({
   selector: 'app-result',
