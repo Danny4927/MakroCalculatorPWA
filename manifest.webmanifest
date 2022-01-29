@@ -1,6 +1,6 @@
 {
-  "name": "macro-calculator-pwa",
-  "short_name": "macro-calculator-pwa",
+  "name": "MacroCalculator",
+  "short_name": "MacroCalculator",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
