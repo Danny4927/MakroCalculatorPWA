@@ -1,11 +1,13 @@
 {
-  "name": "macro-calculator-pwa",
-  "short_name": "macro-calculator-pwa",
+  "name": "MacroCalculator",
+  "short_name": "MacroCalculator",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/",
+  "description": "Eine App zur Unterstützung bei der Ernährung",
+  "scope": "/MakroCalculatorPWA/",
   "start_url": "https://danny4927.github.io/MakroCalculatorPWA/",
+  "id": "/MakroCalculatorPWA/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
