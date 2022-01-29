@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1643480412499,
+  "timestamp": 1643480871246,
   "index": "https://danny4927.github.io/MakroCalculatorPWA/index.html",
   "assetGroups": [
     {
@@ -60,7 +60,7 @@
     "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-72x72.png": "96aa8cf462ec719cd9ac7bc7092e3e81836dc4ad",
     "https://danny4927.github.io/MakroCalculatorPWA/assets/icons/icon-96x96.png": "d7ab57250893a0ed9f6e39edb2bf6dbc8572335e",
     "https://danny4927.github.io/MakroCalculatorPWA/favicon.ico": "78fd73d158dfcd4a230f7b041f63b2507525a9df",
-    "https://danny4927.github.io/MakroCalculatorPWA/index.html": "4c06a880797dba65d2ba76d456662bdea751f24b",
+    "https://danny4927.github.io/MakroCalculatorPWA/index.html": "bc00ed6403d9ad63872d36ad73afcb7e42611bff",
     "https://danny4927.github.io/MakroCalculatorPWA/main.c4844242c4d170c5.js": "83b4e1d07dd8af6e9419f809a95fa354a114d2a3",
     "https://danny4927.github.io/MakroCalculatorPWA/manifest.webmanifest": "b0f535dcdb1b568abcdf4882cb3780a39363bc5e",
     "https://danny4927.github.io/MakroCalculatorPWA/polyfills.f9a315b5e9e900ee.js": "2181890f10353b81144f33801bffafaede909b93",
