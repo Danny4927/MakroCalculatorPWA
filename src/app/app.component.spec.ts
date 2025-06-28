@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'macro-calculator-pwa'`, () => {
+  it(`should have as title 'Macro Calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('macro-calculator-pwa');
+    expect(app.title).toEqual('Macro Calculator');
   });
 
-  it('should render title', () => {
+  it('should render landing page component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('macro-calculator-pwa app is running!');
+    const compiled = fixture.debugElement.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-landingpage')).toBeTruthy();
   });
 });
