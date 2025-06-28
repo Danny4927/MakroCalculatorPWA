@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display application title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('macro-calculator-pwa app is running!');
+    expect(page.getTitleText()).toEqual('Macro Calculator');
   });
 
   afterEach(async () => {

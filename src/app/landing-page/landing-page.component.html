@@ -23,7 +23,7 @@
         <ng-template matStepLabel>PAL</ng-template>
         <app-pal></app-pal>
         <div class="mt-1">
-          <button mat-flat-button color="secondary" matStepperPrevious>Zurück</button>
+          <button mat-flat-button color="accent" matStepperPrevious>Zurück</button>
           <button mat-flat-button color="primary" [disabled]="service.pal === undefined" matStepperNext>Weiter</button>
         </div>
       </mat-step>
@@ -32,7 +32,7 @@
         <app-result></app-result>
         <div class="mt-1">
           <button mat-flat-button color="primary" matStepperPrevious>Zurück</button>
-          <button mat-flat-button color="secondary" (click)="stepper.reset()">Reset</button>
+          <button mat-flat-button color="accent" (click)="stepper.reset()">Reset</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
