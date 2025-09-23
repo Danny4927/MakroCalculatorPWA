@@ -21,7 +21,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
-import {FlexModule} from '@angular/flex-layout';
 import { BMIComponent } from './bmi/bmi.component';
 import {EnergyModule} from './energy/energy.module';
 
@@ -30,8 +29,6 @@ registerLocaleData(localeDe);
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
-    SidenavMenuComponent,
     BMIComponent
   ],
   imports: [
@@ -51,8 +48,8 @@ registerLocaleData(localeDe);
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FlexModule,
-    EnergyModule
+    EnergyModule,
+    LandingPageComponent
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'de-DE'}
