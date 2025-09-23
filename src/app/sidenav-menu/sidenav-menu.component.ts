@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
 import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 
 @Component({
@@ -8,7 +9,7 @@ import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-l
   templateUrl: './sidenav-menu.component.html',
   styleUrls: ['./sidenav-menu.component.scss'],
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatListModule],
+  imports: [CommonModule, MatIconModule, MatListModule, MatLegacyButtonModule],
 })
 export class SidenavMenuComponent implements OnInit {
 

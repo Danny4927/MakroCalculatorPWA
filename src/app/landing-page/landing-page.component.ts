@@ -8,13 +8,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavMenuComponent } from '../sidenav-menu/sidenav-menu.component';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
 
 @Component({
   selector: 'app-landingpage',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
   standalone: true,
-  imports: [CommonModule, MatStepperModule, EnergyModule, MatIconModule, MatToolbarModule, MatSidenavModule, SidenavMenuComponent]
+  imports: [CommonModule, MatStepperModule, EnergyModule, MatIconModule, MatToolbarModule, MatSidenavModule, MatLegacyButtonModule, SidenavMenuComponent]
 })
 export class LandingPageComponent implements OnInit {
 
