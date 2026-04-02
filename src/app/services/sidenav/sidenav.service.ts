@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class SidenavService {
-  public opened = false;
+  /** Signal-based open/close state for the sidenav */
+  readonly opened = signal(false);
 
-  constructor() { }
+  toggle(): void {
+    this.opened.update(v => !v);
+  }
 }

@@ -7,6 +7,9 @@
     "build": "ng build",
     "buildGh": "ng build --configuration production --base-href https://danny4927.github.io/MakroCalculatorPWA/",
     "test": "ng test",
+    "test:vrt:baseline": "BASELINE_URL=http://localhost:4200 npx playwright test --project=baseline --update-snapshots",
+    "test:vrt:migration": "MIGRATION_URL=http://localhost:4201 npx playwright test --project=migration",
+    "test:vrt": "npx playwright test",
     "lint": "ng lint",
     "deployGh": "npm run buildGh && ngh --no-silent -d dist/macro-calculator-pwa/browser"
   },
@@ -30,9 +33,15 @@
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
     "@angular/language-service": "^21.0.0",
+    "@angular-eslint/builder": "^18.0.0",
+    "@angular-eslint/eslint-plugin": "^18.0.0",
+    "@angular-eslint/eslint-plugin-template": "^18.0.0",
+    "@angular-eslint/template-parser": "^18.0.0",
+    "@playwright/test": "^1.44.0",
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^2.0.0",
     "angular-cli-ghpages": "^2.0.0",
+    "eslint": "^9.0.0",
     "typescript": "^5.6.0",
     "vitest": "^2.0.0"
   }

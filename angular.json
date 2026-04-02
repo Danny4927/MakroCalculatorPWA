@@ -24,11 +24,8 @@
             "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              { "glob": "**/*", "input": "src/assets", "output": "assets" }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
