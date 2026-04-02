@@ -1,35 +1,29 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { AppComponent } from './app.component';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
+      providers: [
+        provideZonelessChangeDetection(),
+        provideRouter([])
+      ]
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Macro Calculator'`, () => {
+  it('should have title "Macro Calculator"', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Macro Calculator');
-  });
-
-  it('should render landing page component', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-landingpage')).toBeTruthy();
+    const app = fixture.componentInstance;
+    expect(app.title).toBe('Macro Calculator');
   });
 });

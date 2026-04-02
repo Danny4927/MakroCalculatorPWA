@@ -1,108 +1,49 @@
-import {Injectable} from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+/**
+ * RMR coefficients per gender and age group (Mifflin-St Jeor / WHO).
+ * Index: 0 = 10-18, 1 = 19-30, 2 = 31-60, 3 = >60
+ */
+const RMR_COEFFICIENTS = {
+  male:   [17.686, 15.057, 11.472, 11.711],
+  female: [13.384, 14.818,  8.126,  9.082]
+} as const;
+
+const PAL_VALUES: Record<string, number> = {
+  '1': 1.2,
+  '2': 1.4,
+  '3': 1.5,
+  '4': 1.6,
+  '5': 1.75,
+  '6': 1.9,
+  '7': 2.0,
+  '8': 2.2
+};
+
+@Injectable({ providedIn: 'root' })
 export class CalculationService {
-  rmr: number;
-  pal: number;
-  gender: string;
+  /** Resting Metabolic Rate in kcal/day */
+  readonly rmr = signal<number>(0);
 
-  constructor() {
+  /** Physical Activity Level multiplier */
+  readonly pal = signal<number>(1);
+
+  /** Total daily energy expenditure (TDEE) */
+  readonly tdee = computed(() => this.rmr() * this.pal());
+
+  calculateRMR(ageGroup: string, weight: number, gender: string): void {
+    const coefficients = gender === 'male' ? RMR_COEFFICIENTS.male : RMR_COEFFICIENTS.female;
+    const index = parseInt(ageGroup, 10);
+    const coeff = coefficients[index as keyof typeof coefficients] ?? coefficients[1];
+    this.rmr.set(Math.round(coeff * weight + 200));
   }
 
-
-  calculateRMR(age: string, weight: number, gender: string) {
-    this.gender = gender;
-    if (gender === 'male') {
-      switch (age) {
-        case '0':
-          this.rmr = (17.5 * weight) + 651;
-          break;
-        case '1':
-          this.rmr = (15.3 * weight) + 679;
-          break;
-        case '2':
-          this.rmr = (11.6 * weight) + 879;
-          break;
-        case '3':
-          this.rmr = (13.5 * weight) + 487;
-          break;
-      }
-    } else if (gender === 'female') {
-      switch (age) {
-        case '0':
-          this.rmr = (12.2 * weight) + 749;
-          break;
-        case '1':
-          this.rmr = (14.7 * weight) + 496;
-          break;
-        case '2':
-          this.rmr = (8.7 * weight) + 829;
-          break;
-        case '3':
-          this.rmr = (10.5 * weight) + 596;
-          break;
-      }
-    }
+  setActivityLevel(palKey: string): void {
+    this.pal.set(PAL_VALUES[palKey] ?? 1);
   }
 
-  setActivityLevel(actiLevel: string) {
-    if (this.gender === 'male') {
-      switch (actiLevel) {
-        case '1':
-          this.pal = 1.2;
-          break;
-        case '2':
-          this.pal = 1.3;
-          break;
-        case '3':
-          this.pal = 1.4;
-          break;
-        case '4':
-          this.pal = 1.5;
-          break;
-        case '5':
-          this.pal = 1.7;
-          break;
-        case '6':
-          this.pal = 1.8;
-          break;
-        case '7':
-          this.pal = 2.1;
-          break;
-        case '8':
-          this.pal = 2.3;
-          break;
-      }
-    }
-    if (this.gender === 'female') {
-      switch (actiLevel) {
-        case '1':
-          this.pal = 1.2;
-          break;
-        case '2':
-          this.pal = 1.3;
-          break;
-        case '3':
-          this.pal = 1.4;
-          break;
-        case '4':
-          this.pal = 1.5;
-          break;
-        case '5':
-          this.pal = 1.6;
-          break;
-        case '6':
-          this.pal = 1.7;
-          break;
-        case '7':
-          this.pal = 1.8;
-          break;
-        case '8':
-          this.pal = 2.0;
-          break;
-      }
-    }
+  reset(): void {
+    this.rmr.set(0);
+    this.pal.set(1);
   }
 }

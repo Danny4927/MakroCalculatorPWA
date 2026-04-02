@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { IntroComponent } from './intro.component';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('IntroComponent', () => {
-  let component: IntroComponent;
-  let fixture: ComponentFixture<IntroComponent>;
-
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ IntroComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(IntroComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [IntroComponent],
+      providers: [provideZonelessChangeDetection()]
+    }).compileComponents();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(IntroComponent);
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });

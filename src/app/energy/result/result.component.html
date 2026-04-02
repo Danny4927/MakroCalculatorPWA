@@ -1,4 +1,8 @@
 <p class="mat-body-strong">Deine Ergebnisse:</p>
-<div>RMR: {{service.rmr}} Kcal</div>
-<div>PAL: {{service.pal}} </div>
-<div class="mat-h2">Täglicher Energiebedarf: {{getTotal()  | number : '1.2-2' :'de-DE' }} Kcal</div>
+<div>RMR: {{ service.rmr() }} Kcal</div>
+<div>PAL: {{ service.pal() }}</div>
+@if (service.tdee() > 0) {
+  <div class="mat-h2">
+    Täglicher Energiebedarf: {{ service.tdee() | number: '1.2-2' : 'de-DE' }} Kcal
+  </div>
+}

@@ -1,36 +1,53 @@
 <mat-card>
-  <mat-card-title>
-    Ruheumsatz (RMR)
-  </mat-card-title>
-  <mat-card-subtitle>
-    Der Ruheumsatz/Grundumsatz (engl. Resting Metabolic Rate) ist eine Größe zur Charakterisierung des Stoffwechsels.
-    Sie ist die Energiemenge, die der Körper pro Tag bei völliger Ruhe, bei 28 °C und nüchtern (d. h. mit leerem Magen)
-    zur Aufrechterhaltung seiner Funktionen benötigt.
-  </mat-card-subtitle>
+  <mat-card-header>
+    <mat-card-title>Ruheumsatz (RMR)</mat-card-title>
+    <mat-card-subtitle>
+      Der Ruheumsatz/Grundumsatz (engl. Resting Metabolic Rate) ist eine Größe zur Charakterisierung des Stoffwechsels.
+      Sie ist die Energiemenge, die der Körper pro Tag bei völliger Ruhe, bei 28 °C und nüchtern
+      zur Aufrechterhaltung seiner Funktionen benötigt.
+    </mat-card-subtitle>
+  </mat-card-header>
 
   <mat-card-content>
     <div>
-      <label id="gender-label">Geschlecht </label>
-      <mat-radio-group aria-labelledby="gender-label" class="my-radio-group" [(ngModel)]="gender"
-                       (change)="calculateRMR()">
+      <label id="gender-label">Geschlecht</label>
+      <mat-radio-group
+        aria-labelledby="gender-label"
+        class="my-radio-group"
+        [ngModel]="gender()"
+        (ngModelChange)="gender.set($event); calculateRMR()">
         <mat-radio-button class="my-radio-button" value="male">männlich</mat-radio-button>
         <mat-radio-button class="my-radio-button" value="female">weiblich</mat-radio-button>
       </mat-radio-group>
     </div>
+
     <div>
-      <label>Altersgruppe </label>
-      <mat-radio-group class="my-radio-group" [(ngModel)]="age" (change)="calculateRMR()">
-        <mat-radio-button class="my-radio-button" value="0">10-18</mat-radio-button>
-        <mat-radio-button class="my-radio-button" value="1">19-30</mat-radio-button>
-        <mat-radio-button class="my-radio-button" value="2">31-60</mat-radio-button>
-        <mat-radio-button class="my-radio-button" value="3">>60</mat-radio-button>
+      <label>Altersgruppe</label>
+      <mat-radio-group
+        class="my-radio-group"
+        [ngModel]="age()"
+        (ngModelChange)="age.set($event); calculateRMR()">
+        <mat-radio-button class="my-radio-button" value="0">10–18</mat-radio-button>
+        <mat-radio-button class="my-radio-button" value="1">19–30</mat-radio-button>
+        <mat-radio-button class="my-radio-button" value="2">31–60</mat-radio-button>
+        <mat-radio-button class="my-radio-button" value="3">&gt;60</mat-radio-button>
       </mat-radio-group>
     </div>
+
     <div>
       <mat-form-field>
-        <input [(ngModel)]="weight" matInput placeholder="Gewicht (kg)" (change)="calculateRMR()" required>
+        <mat-label>Gewicht (kg)</mat-label>
+        <input
+          matInput
+          type="number"
+          [ngModel]="weight()"
+          (ngModelChange)="weight.set($event); calculateRMR()"
+          required />
       </mat-form-field>
     </div>
-    <div *ngIf="service.rmr" class="mat-h2">RMR: {{service.rmr}} Kcal</div>
+
+    @if (service.rmr() > 0) {
+      <div class="mat-h2">RMR: {{ service.rmr() }} Kcal</div>
+    }
   </mat-card-content>
 </mat-card>
