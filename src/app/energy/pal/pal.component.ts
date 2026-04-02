@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import {CalculationService} from '../../services/calculation/calculation.service';
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { CalculationService } from '../../services/calculation/calculation.service';
 
 @Component({
   selector: 'app-pal',
+  standalone: true,
+  imports: [FormsModule, MatRadioModule],
   templateUrl: './pal.component.html',
-  styleUrls: ['./pal.component.scss']
+  styleUrl: './pal.component.scss'
 })
-export class PalComponent implements OnInit {
-  pal: string;
+export class PalComponent {
+  readonly pal = signal<string>('');
 
-  constructor(private service: CalculationService) { }
+  constructor(private readonly service: CalculationService) {}
 
-  ngOnInit() {
-  }
-
-  setActivityLevel() {
-    this.service.setActivityLevel(this.pal);
+  setActivityLevel(): void {
+    this.service.setActivityLevel(this.pal());
   }
 }

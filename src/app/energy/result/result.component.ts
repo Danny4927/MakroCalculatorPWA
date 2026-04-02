@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {CalculationService} from '../../services/calculation/calculation.service';
+import { Component } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { CalculationService } from '../../services/calculation/calculation.service';
 
 @Component({
   selector: 'app-result',
+  standalone: true,
+  imports: [DecimalPipe],
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrl: './result.component.scss'
 })
-export class ResultComponent implements OnInit {
-
-  constructor(public service: CalculationService) { }
-
-  ngOnInit() {
-  }
-
-  getTotal() {
-    return this.service.rmr * this.service.pal;
-  }
+export class ResultComponent {
+  constructor(public readonly service: CalculationService) {}
 }

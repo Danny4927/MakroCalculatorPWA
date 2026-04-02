@@ -1,11 +1,4 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-
-const routes: Routes = [];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, {})],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+// This file is intentionally empty.
+// Routing is provided via provideRouter(routes) in app.config.ts.
+// Kept as a placeholder to avoid git conflicts with the master branch.
+export {};

@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-bmi',
+  standalone: true,
+  imports: [],
   templateUrl: './bmi.component.html',
-  styleUrls: ['./bmi.component.scss']
+  styleUrl: './bmi.component.scss'
 })
-export class BMIComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class BMIComponent {}

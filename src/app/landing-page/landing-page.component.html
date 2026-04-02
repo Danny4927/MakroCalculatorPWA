@@ -1,7 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav [(opened)]="sidenavService.opened">
-    <app-sidenav-content></app-sidenav-content>
+  <mat-sidenav [opened]="sidenavService.opened()" (openedChange)="sidenavService.opened.set($event)">
+    <app-sidenav-menu></app-sidenav-menu>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar class="my-toolbar" color="primary">
       <button mat-icon-button class="menu-button" aria-label="Open Sidenav" (click)="toggleSidenav()">
@@ -9,32 +10,42 @@
       </button>
       <span class="ml-5">Macro Calculator</span>
     </mat-toolbar>
+
     <div class="placeholder"></div>
-    <mat-horizontal-stepper [linear]=true #stepper>
+
+    <mat-stepper [linear]="true" #stepper>
       <mat-step>
         <ng-template matStepLabel>RMR</ng-template>
         <app-intro></app-intro>
         <app-rmr-step></app-rmr-step>
         <div class="mt-1">
-          <button mat-flat-button color="primary" [disabled]="service.rmr === undefined" matStepperNext>Weiter</button>
+          <button mat-flat-button color="primary" [disabled]="service.rmr() === 0" matStepperNext>
+            Weiter
+          </button>
         </div>
       </mat-step>
+
       <mat-step>
         <ng-template matStepLabel>PAL</ng-template>
         <app-pal></app-pal>
         <div class="mt-1">
           <button mat-flat-button color="accent" matStepperPrevious>Zurück</button>
-          <button mat-flat-button color="primary" [disabled]="service.pal === undefined" matStepperNext>Weiter</button>
+          <button mat-flat-button color="primary" [disabled]="service.pal() === 1" matStepperNext>
+            Weiter
+          </button>
         </div>
       </mat-step>
+
       <mat-step>
         <ng-template matStepLabel>Ergebnis</ng-template>
         <app-result></app-result>
         <div class="mt-1">
           <button mat-flat-button color="primary" matStepperPrevious>Zurück</button>
-          <button mat-flat-button color="accent" (click)="stepper.reset()">Reset</button>
+          <button mat-flat-button color="accent" (click)="stepper.reset(); service.reset()">
+            Reset
+          </button>
         </div>
       </mat-step>
-    </mat-horizontal-stepper>
+    </mat-stepper>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,0 +1,94 @@
+name: Visual Regression Tests
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ feat/angular21-migration ]
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      # -------------------------------------------------------
+      # 1. Baseline bauen (Angular 15 / master) auf Port 4200
+      # -------------------------------------------------------
+      - name: Checkout master for baseline build
+        run: |
+          git stash
+          git checkout master
+          npm ci
+          npx ng build --configuration production --output-path dist/baseline
+          git checkout -
+          git stash pop || true
+
+      - name: Serve baseline on port 4200
+        run: |
+          npx serve dist/baseline/macro-calculator-pwa -l 4200 &
+          sleep 3
+
+      - name: Create baseline snapshots
+        run: |
+          BASELINE_URL=http://localhost:4200 \
+          npx playwright test --project=baseline --update-snapshots
+        env:
+          BASELINE_URL: http://localhost:4200
+
+      # -------------------------------------------------------
+      # 2. Migration bauen (Angular 21) auf Port 4201
+      # -------------------------------------------------------
+      - name: Build migration branch
+        run: |
+          npm ci
+          npx ng build --configuration production --output-path dist/migration
+
+      - name: Serve migration on port 4201
+        run: |
+          npx serve dist/migration/macro-calculator-pwa/browser -l 4201 &
+          sleep 3
+
+      - name: Run visual regression comparison
+        run: |
+          BASELINE_URL=http://localhost:4200 \
+          MIGRATION_URL=http://localhost:4201 \
+          npx playwright test --project=migration
+        env:
+          BASELINE_URL: http://localhost:4200
+          MIGRATION_URL: http://localhost:4201
+
+      # -------------------------------------------------------
+      # 3. Report als Artefakt hochladen
+      # -------------------------------------------------------
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Upload diff snapshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: vrt-diff-snapshots
+          path: e2e/snapshots/
+          retention-days: 14

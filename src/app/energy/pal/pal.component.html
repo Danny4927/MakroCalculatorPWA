@@ -1,10 +1,15 @@
-Als Aktivitätslevel (engl. "Physical Activity Level"), auch Leistungsumsatz oder Arbeitsumsatz genannt, wird
-diejenige Energiemenge definiert, die der Mensch über den Grundumsatz hinaus für Arbeitstätigkeiten umsetzt.
+<p>
+  Als Aktivitätslevel (engl. "Physical Activity Level"), auch Leistungsumsatz oder Arbeitsumsatz genannt, wird
+  diejenige Energiemenge definiert, die der Mensch über den Grundumsatz hinaus für Arbeitstätigkeiten umsetzt.
+</p>
+<p>Welches Aktivitätslevel trifft auf Sie am meisten zu?</p>
 
-Welches Aktivitätslevel trifft auf Sie am meisten zu?
 <div class="mt-1">
-  <label>Aktivitätslevel </label>
-  <mat-radio-group class="my-radio-group" [(ngModel)]="pal" (change)="setActivityLevel()">
+  <label>Aktivitätslevel</label>
+  <mat-radio-group
+    class="my-radio-group"
+    [ngModel]="pal()"
+    (ngModelChange)="pal.set($event); setActivityLevel()">
     <mat-radio-button class="my-radio-button" value="1">Bettruhe</mat-radio-button>
     <mat-radio-button class="my-radio-button" value="2">Sitzend</mat-radio-button>
     <mat-radio-button class="my-radio-button" value="3">Primär sitzend</mat-radio-button>
